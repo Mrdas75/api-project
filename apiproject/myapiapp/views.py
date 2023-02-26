@@ -72,3 +72,5 @@ class TutorialView(APIView):
         Tutorial_data = Tutorial.objects.filter(id=id)
         Tutorial_data.delete()
         return Response({"message":"Delete successful"},status=status.HTTP_204_NO_CONTENT)
+    
+# helllo subal
