@@ -59,13 +59,13 @@ class TutorialView(APIView):
         return Response(tutorial_serializer.errors,status=status.HTTP_400_BAD_REQUEST)
 
 
-    def put(self,request,id=None):
-        Tutorial_data = Tutorial.objects.filter(id=id).first()
-        tutorial_serializer = TutorialSerializers(Tutorial_data,request.data,partial=True)
-        if tutorial_serializer.is_valid():
-            tutorial_serializer.save()
-            return Response ({"message": tutorial_serializer.data})
-        return Response(tutorial_serializer.errors,status=status.HTTP_400_BAD_REQUEST)
+    # def put(self,request,id=None):
+    #     Tutorial_data = Tutorial.objects.filter(id=id).first()
+    #     tutorial_serializer = TutorialSerializers(Tutorial_data,request.data,partial=True)
+    #     if tutorial_serializer.is_valid():
+    #         tutorial_serializer.save()
+    #         return Response ({"message": tutorial_serializer.data})
+    #     return Response(tutorial_serializer.errors,status=status.HTTP_400_BAD_REQUEST)
     
     
     def delete(self, request, id=None):
